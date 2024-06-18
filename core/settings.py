@@ -18,6 +18,7 @@ from decouple import config
 #BASE_DIR = Path(__file__).resolve().parent.parent  #modified for vercel db error
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #changed because database readonly
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
