@@ -1,7 +1,7 @@
-python -m pip install -r requirements.txt
+#!/bin/bash
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
 # Run database migrations
-python manage.py makemigrations --noinput
-python manage.py migrate --noinput
-
-python manage.py collectstatic --noinput --clear
+python manage.py makemigrations
+python manage.py migrate
