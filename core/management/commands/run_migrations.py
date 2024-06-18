@@ -1,9 +1,10 @@
-from django.core.management.base import BaseCommand
-from django.core.management import call_command
+import os
+import subprocess
 
-class Command(BaseCommand):
-    help = 'Run database migrations'
-
-    def handle(self, *args, **kwargs):
-        call_command('makemigrations')
-        call_command('migrate')
+def handler(request, response):
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecommerce.settings')
+    result = subprocess.run(['python', 'manage.py', 'migrate'], capture_output=True, text=True)
+    return response.json({
+        'stdout': result.stdout,
+        'stderr': result.stderr
+    })
