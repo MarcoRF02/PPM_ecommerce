@@ -15,7 +15,10 @@
       "dest": "core/wsgi.py"
     }
   ],
-  "hooks": {
-    "post-deploy": "python manage.py run_migrations"
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "core.settings"
+    },
+    "command": "bash build.sh"
   }
 }
